@@ -1,0 +1,14 @@
+        
+        getSupportActionBar().hide();
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.R)
+        {
+            WindowInsetsController windowInsetsController=getWindow().getInsetsController();
+            if(windowInsetsController!=null)
+            {
+                windowInsetsController.hide(WindowInsets.Type.statusBars());
+            }
+            else
+            {
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+        }
